@@ -5,12 +5,20 @@ readlineSync = require("readline-sync");
 var username = readlineSync.question("What is your name? ");
 console.log("Welcome " + username + " to the Movie quiz \n" );
 
+// Highscores
+var score = 0;
+highScore =[
+    {name:"jayesh" , highscore: 6},
+    {name:"random" , highscore: 4}
+  ]
+
 //quiz function
 function quiz(question,answer){
     var useranswer = readlineSync.question(question);
   
     if(useranswer === answer ){
       console.log(" You are Right");
+      score = score + 1 ;
     }
     else{
       console.log(" You are Wrong");
@@ -63,3 +71,9 @@ function quiz(question,answer){
 for(i=0;i<qna.length;i++){
     quiz(qna[i].question,qna[i].answer);
   }
+
+console.log("-------------------------------")
+console.log("HighScores")
+for (var j = 0; j <= highScore.length; j++) {
+    console.log(highScore[j].name, highScore[j].highscore)
+    }
