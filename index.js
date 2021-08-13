@@ -5,6 +5,20 @@ readlineSync = require("readline-sync");
 var username = readlineSync.question("What is your name? ");
 console.log("Welcome " + username + " to the Movie quiz \n" );
 
+//quiz function
+function quiz(question,answer){
+    var useranswer = readlineSync.question(question);
+  
+    if(useranswer === answer ){
+      console.log(" You are Right");
+    }
+    else{
+      console.log(" You are Wrong");
+    }
+    console.log(" Your score : ",score);
+    console.log("-------------------------------");
+  }
+  
  //array of questions and answers(objects)   
  qna = [
     {
@@ -45,3 +59,7 @@ console.log("Welcome " + username + " to the Movie quiz \n" );
     }
   ]
   
+//for calling questions one by one
+for(i=0;i<qna.length;i++){
+    quiz(qna[i].question,qna[i].answer);
+  }
