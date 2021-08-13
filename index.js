@@ -72,6 +72,11 @@ for(i=0;i<qna.length;i++){
     quiz(qna[i].question,qna[i].answer);
   }
 
+// Output high scores and check if user has beaten high score or not
+if(score >= highScore[0].highscore){
+    console.log(" Congratulations!!! You made a new High score ");
+    console.log(" Do share the screenshot of your score with me to get add to Highscore list")
+  }
 console.log("-------------------------------")
 console.log("HighScores")
 for (var j = 0; j <= highScore.length; j++) {
